@@ -20,7 +20,7 @@ test "product price must be positive" do
  
     product.price = 0
     assert product.invalid?
-    assert_equal ["must be greater than or equal to 0.01"], 
+    assert_equal ["must be greater than or equal to 0.01"],
       product.errors[:price]
  
     product.price = 1
@@ -49,7 +49,7 @@ test "product price must be positive" do
   end
  
   test "product is not valid without a unique title" do
-    product = Product.new(title:       products(:ruby).title,
+    product = Product.new(title:       products(:one).title,
                           description: "yyy", 
                           price:       1, 
                           image_url:   "fred.gif")
@@ -59,7 +59,7 @@ test "product price must be positive" do
   end
  
   test "product is not valid without a unique title - i18n" do
-    product = Product.new(title:       products(:ruby).title,
+    product = Product.new(title:       products(:one).title,
                           description: "yyy", 
                           price:       1, 
                           image_url:   "fred.gif")
